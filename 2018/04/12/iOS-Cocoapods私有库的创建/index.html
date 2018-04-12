@@ -99,20 +99,20 @@
 
 
 
-  <meta name="description" content="私有库的原理上回书说道，我们的公有库的索引文件是通过 1pod setup 命令缓存到本地的，我们按照索引文件里面的信息查找、使用我们的第三方库。所以，我们要仿照这个这个模式，建立一个远端的私有的Specs仓库，并将私有库的描述文件上传到这个仓库里，从而达到我们使用私有库的目的。 准备工作同上回书，iOS Cocoapods公有库的创建（当然，Specs仓库和代码仓库是私有的） 正文Specs仓库">
+  <meta name="description" content="私有库的原理上回书说道，我们的公有库的索引文件是通过 1pod setup 命令缓存到本地的，我们按照索引文件里面的信息查找、使用我们的第三方库。所以，我们要仿照这个这个模式，建立一个远端的私有的Specs仓库，并将私有库的描述文件上传到这个仓库里，从而达到我们使用私有库的目的。">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS Cocoapods私有库的创建">
 <meta property="og:url" content="http://yoursite.com/2018/04/12/iOS-Cocoapods私有库的创建/index.html">
 <meta property="og:site_name" content="Crowdfunding time">
-<meta property="og:description" content="私有库的原理上回书说道，我们的公有库的索引文件是通过 1pod setup 命令缓存到本地的，我们按照索引文件里面的信息查找、使用我们的第三方库。所以，我们要仿照这个这个模式，建立一个远端的私有的Specs仓库，并将私有库的描述文件上传到这个仓库里，从而达到我们使用私有库的目的。 准备工作同上回书，iOS Cocoapods公有库的创建（当然，Specs仓库和代码仓库是私有的） 正文Specs仓库">
+<meta property="og:description" content="私有库的原理上回书说道，我们的公有库的索引文件是通过 1pod setup 命令缓存到本地的，我们按照索引文件里面的信息查找、使用我们的第三方库。所以，我们要仿照这个这个模式，建立一个远端的私有的Specs仓库，并将私有库的描述文件上传到这个仓库里，从而达到我们使用私有库的目的。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://t1.aixinxi.net/o_1casi0as013tihem2in1hm41el3a.png-w.jpg">
 <meta property="og:image" content="https://t1.aixinxi.net/o_1casjp89rno398ip4b1pno14t2a.png-w.jpg">
-<meta property="og:updated_time" content="2018-04-12T14:03:16.369Z">
+<meta property="og:updated_time" content="2018-04-12T14:05:07.658Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS Cocoapods私有库的创建">
-<meta name="twitter:description" content="私有库的原理上回书说道，我们的公有库的索引文件是通过 1pod setup 命令缓存到本地的，我们按照索引文件里面的信息查找、使用我们的第三方库。所以，我们要仿照这个这个模式，建立一个远端的私有的Specs仓库，并将私有库的描述文件上传到这个仓库里，从而达到我们使用私有库的目的。 准备工作同上回书，iOS Cocoapods公有库的创建（当然，Specs仓库和代码仓库是私有的） 正文Specs仓库">
+<meta name="twitter:description" content="私有库的原理上回书说道，我们的公有库的索引文件是通过 1pod setup 命令缓存到本地的，我们按照索引文件里面的信息查找、使用我们的第三方库。所以，我们要仿照这个这个模式，建立一个远端的私有的Specs仓库，并将私有库的描述文件上传到这个仓库里，从而达到我们使用私有库的目的。">
 <meta name="twitter:image" content="https://t1.aixinxi.net/o_1casi0as013tihem2in1hm41el3a.png-w.jpg">
 
 
@@ -424,6 +424,7 @@
         <h2 id="私有库的原理"><a href="#私有库的原理" class="headerlink" title="私有库的原理"></a>私有库的原理</h2><p>上回书说道，我们的公有库的索引文件是通过</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod setup</span><br></pre></td></tr></table></figure>
 <p>命令缓存到本地的，我们按照索引文件里面的信息查找、使用我们的第三方库。所以，我们要仿照这个这个模式，建立一个远端的私有的Specs仓库，并将私有库的描述文件上传到这个仓库里，从而达到我们使用私有库的目的。</p>
+<a id="more"></a>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>同上回书，<a href="https://damodaoshi.cn/2018/04/07/iOS-Cocoapods%E5%85%AC%E6%9C%89%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA/" target="_blank" rel="noopener">iOS Cocoapods公有库的创建</a>（当然，Specs仓库和代码仓库是私有的）</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="Specs仓库"><a href="#Specs仓库" class="headerlink" title="Specs仓库"></a>Specs仓库</h3><p>首先，我们要建立一个仓库，</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod repo add &apos;你的私有Specs仓库名&apos; &apos;你的私有Specs仓库地址&apos;</span><br></pre></td></tr></table></figure>
