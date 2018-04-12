@@ -188,7 +188,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">稻花香里说丰年，听取人生经验</p>
+        <p class="site-subtitle">想学啊，我教你啊</p>
       
   </div>
 
@@ -296,6 +296,180 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/12/iOS-Cocoapods私有库的创建/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李奕霖">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Crowdfunding time">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/12/iOS-Cocoapods私有库的创建/" itemprop="url">iOS Cocoapods私有库的创建</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-12T21:59:10+08:00">2018-04-12</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/iOS开发/" itemprop="url" rel="index"><span itemprop="name">iOS开发</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/12/iOS-Cocoapods私有库的创建/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/12/iOS-Cocoapods私有库的创建/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="私有库的原理"><a href="#私有库的原理" class="headerlink" title="私有库的原理"></a>私有库的原理</h2><p>上回书说道，我们的公有库的索引文件是通过</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod setup</span><br></pre></td></tr></table></figure>
+<p>命令缓存到本地的，我们按照索引文件里面的信息查找、使用我们的第三方库。所以，我们要仿照这个这个模式，建立一个远端的私有的Specs仓库，并将私有库的描述文件上传到这个仓库里，从而达到我们使用私有库的目的。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>同上回书，<a href="https://damodaoshi.cn/2018/04/07/iOS-Cocoapods%E5%85%AC%E6%9C%89%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA/" target="_blank" rel="noopener">iOS Cocoapods公有库的创建</a>（当然，Specs仓库和代码仓库是私有的）</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="Specs仓库"><a href="#Specs仓库" class="headerlink" title="Specs仓库"></a>Specs仓库</h3><p>首先，我们要建立一个仓库，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod repo add &apos;你的私有Specs仓库名&apos; &apos;你的私有Specs仓库地址&apos;</span><br></pre></td></tr></table></figure>
+<p>之后，我们在Finder中搜索</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.cocoapods/repos</span><br></pre></td></tr></table></figure>
+<p>或者使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod repo list</span><br></pre></td></tr></table></figure>
+<p>命令来检查是否创建成功。<img src="https://t1.aixinxi.net/o_1casi0as013tihem2in1hm41el3a.png-w.jpg" alt=""></p>
+<h3 id="pod-spec文件"><a href="#pod-spec文件" class="headerlink" title="pod spec文件"></a>pod spec文件</h3><p>虽然这个地方上回书已经说过了，<strong>但是这步真的好重要啊，好想强调给你们，一定要照着上次说的模板好好写啊，要不要只会男上加男啊（我必须皮这一下）</strong>。写好了也验证通过了（<strong>不通过的话一定要好好检查spec文件</strong>），打上标签push到远程仓库。最后将我们的描述信息，push到我们的Specs仓库里。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod repo push &apos;你刚才的私有Specs仓库名&apos; &apos;你的描述文件.podspec&apos;</span><br></pre></td></tr></table></figure>
+<p>成功的话就会在</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.cocoapods/repos/你的私有Specs仓库名</span><br></pre></td></tr></table></figure>
+<p>中发现新增的仓库描述信息啦<img src="https://t1.aixinxi.net/o_1casjp89rno398ip4b1pno14t2a.png-w.jpg" alt=""></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>在Podfile中添加Specs仓库地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">source &apos;http://git.demo.com/ios/DemoSpecs.ios.git&apos; #私有仓库地址（源文件）</span><br><span class="line">source &apos;https://github.com/CocoaPods/Specs.git&apos; #官方仓库地址</span><br><span class="line">platform:ios, &apos;8.0&apos;</span><br><span class="line">target &apos;demo&apos; do  #工程名称</span><br><span class="line">    pod &apos;AFNetworking&apos;</span><br><span class="line">    pod &apos;你的私有库名&apos;</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>最后再install一下就可以啦，有其他的问题或者的话欢迎在下面留言与我交流哦。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+<div>    
+ 
+ 
+</div>
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -835,7 +1009,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
