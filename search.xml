@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[EarlGrey/README的翻译]]></title>
+    <url>%2F2018%2F05%2F14%2FEarlGrey-README%E7%9A%84%E7%BF%BB%E8%AF%91%2F</url>
+    <content type="text"><![CDATA[EarlGreyEarlGrey是一个基于原生的iOS UI自动化测试框架，使您能够编写清晰，简洁的测试用例。 借助EarlGrey框架，您可以访问增强的同步功能。 EarlGrey自动与UI，网络请求和各种队列同步，但仍然允许您根据需要手动实施自定义时间。 EarlGrey的同步功能有助于确保UI在执行操作之前处于稳定状态。这极大地提高了测试稳定性并使测试具有高度可重复性 EarlGrey与XCTest框架协同工作，并与Xcode的Test Navigator集成，因此您可以直接从Xcode或命令行（使用xcodebuild）运行测试。 开始用户的说明书位于EarlGrey/docs文件夹中。要开始，请查看EarlGrey功能，检查兼容性，然后安装/运行EarlGrey与测试目标。在完成所有配置后，请查看EarlGrey API并开始编写自己的测试。 帮助如果您需要帮助，可以使用多种渠道。首先检查FAQ。如果您在阅读FAQ后遇到更多问题，请参阅Known Issues。您可以在位于stackoverflow.com的#earlgrey标签询问更多具体问题。您也可以在我们的Google小组与我们开始新的讨论，或请求加入我们的协作频道。 分析为了提升和改进EarlGrey，该框架收集使用数据并将其上传到Google Analytics。更具体地说，该框架收集MD5加密后的Bundle ID，测试类名称和测试方法名称。这些信息使我们能够测量使用量。有关分析集合的更多详细信息，请仔细阅读包含实现细节的GREYAnalytics.m文件。如果他们愿意，用户可以通过在他们的测试中禁用Analytics配置设置来选择退出 - （void）setUp方法： In Objective-C: 12// Disable analytics.[[GREYConfiguration sharedInstance] setValue:@(NO) forConfigKey:kGREYConfigKeyAnalyticsEnabled]; In Swift: 12// Disable analytics.GREYConfiguration.sharedInstance().setValue(false, forConfigKey: kGREYConfigKeyAnalyticsEnabled) 贡献代码 在做出贡献之前，请确保您遵循了CONTRIBUTING.md中的指导原则。 建立一个EarlGrey项目 从GitHub Clone EarlGrey。 1git clone https://github.com/google/EarlGrey.git 在Clone EarlGrey后，使用setup-earlgrey.sh下载所有依赖项。 脚本运行完成后，打开EarlGrey.xcodeproj并确认所有target成功构建。 您现在可以使用EarlGrey.xcodeproj对框架进行更改。]]></content>
+      <categories>
+        <category>翻译</category>
+      </categories>
+      <tags>
+        <tag>翻译</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[iOS Cocoapods私有库的创建]]></title>
     <url>%2F2018%2F04%2F12%2FiOS-Cocoapods%E7%A7%81%E6%9C%89%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA%2F</url>
     <content type="text"><![CDATA[私有库的原理上回书说道，我们的公有库的索引文件是通过 1pod setup 命令缓存到本地的，我们按照索引文件里面的信息查找、使用我们的第三方库。所以，我们要仿照这个这个模式，建立一个远端的私有的Specs仓库，并将私有库的描述文件上传到这个仓库里，从而达到我们使用私有库的目的。 准备工作同上回书，iOS Cocoapods公有库的创建（当然，Specs仓库和代码仓库是私有的） 正文Specs仓库首先，我们要建立一个仓库， 1pod repo add &apos;你的私有Specs仓库名&apos; &apos;你的私有Specs仓库地址&apos; 之后，我们在Finder中搜索 1~/.cocoapods/repos 或者使用 1pod repo list 命令来检查是否创建成功。 pod spec文件虽然这个地方上回书已经说过了，但是这步真的好重要啊，好想强调给你们，一定要照着上次说的模板好好写啊，要不要只会男上加男啊（我必须皮这一下）。写好了也验证通过了（不通过的话一定要好好检查spec文件），打上标签push到远程仓库。最后将我们的描述信息，push到我们的Specs仓库里。 1pod repo push &apos;你刚才的私有Specs仓库名&apos; &apos;你的描述文件.podspec&apos; 成功的话就会在 1~/.cocoapods/repos/你的私有Specs仓库名 中发现新增的仓库描述信息啦 使用在Podfile中添加Specs仓库地址 1234567source &apos;http://git.demo.com/ios/DemoSpecs.ios.git&apos; #私有仓库地址（源文件）source &apos;https://github.com/CocoaPods/Specs.git&apos; #官方仓库地址platform:ios, &apos;8.0&apos;target &apos;demo&apos; do #工程名称 pod &apos;AFNetworking&apos; pod &apos;你的私有库名&apos;end 最后再install一下就可以啦，有其他的问题或者的话欢迎在下面留言与我交流哦。]]></content>
