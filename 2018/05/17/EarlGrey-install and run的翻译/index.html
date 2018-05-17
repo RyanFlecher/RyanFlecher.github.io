@@ -102,17 +102,20 @@
   <meta name="description" content="安装和运行本文档向你介绍如何安装配置EarlGrey并完成你的第一次测试。 安装EarlGrey你可以通过三种方式将EarlGrey添加到Xcode项目中：使用CocoaPods，Carthage或通过XCode Pjoject手动集成。 对于EarlGrey，我们强烈推荐CocoaPods作为安装的最佳方式，以保持EarlGrey版本是最新的。">
 <meta name="keywords" content="翻译">
 <meta property="og:type" content="article">
-<meta property="og:title" content="EarlGrey-Cocoapods安装的翻译">
-<meta property="og:url" content="http://yoursite.com/2018/05/17/EarlGrey-Cocoapods安装的翻译/index.html">
+<meta property="og:title" content="EarlGrey-install and run的翻译">
+<meta property="og:url" content="http://yoursite.com/2018/05/17/EarlGrey-install and run的翻译/index.html">
 <meta property="og:site_name" content="Crowdfunding time">
 <meta property="og:description" content="安装和运行本文档向你介绍如何安装配置EarlGrey并完成你的第一次测试。 安装EarlGrey你可以通过三种方式将EarlGrey添加到Xcode项目中：使用CocoaPods，Carthage或通过XCode Pjoject手动集成。 对于EarlGrey，我们强烈推荐CocoaPods作为安装的最佳方式，以保持EarlGrey版本是最新的。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://t1.aixinxi.net/o_1cdmfn59h8u11ken1jbfjep1orla.png-w.jpg">
 <meta property="og:image" content="https://t1.aixinxi.net/o_1cdmgakjcj6eq3l1untbnjrdda.png-w.jpg">
 <meta property="og:image" content="https://t1.aixinxi.net/o_1cdmjqvuj7rum7m18o31ubd1vgsa.png-w.jpg">
-<meta property="og:updated_time" content="2018-05-17T08:49:25.525Z">
+<meta property="og:image" content="https://t1.aixinxi.net/o_1cdmlspvanh0h7tpam1ucn12ica.png-w.jpg">
+<meta property="og:image" content="https://t1.aixinxi.net/o_1cdmm2be7prcnpd1ec61r7u1d4ia.png-w.jpg">
+<meta property="og:image" content="https://t1.aixinxi.net/o_1cdmm518n11a4qtt1qp71n2p4bva.png-w.jpg">
+<meta property="og:updated_time" content="2018-05-17T09:33:23.594Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="EarlGrey-Cocoapods安装的翻译">
+<meta name="twitter:title" content="EarlGrey-install and run的翻译">
 <meta name="twitter:description" content="安装和运行本文档向你介绍如何安装配置EarlGrey并完成你的第一次测试。 安装EarlGrey你可以通过三种方式将EarlGrey添加到Xcode项目中：使用CocoaPods，Carthage或通过XCode Pjoject手动集成。 对于EarlGrey，我们强烈推荐CocoaPods作为安装的最佳方式，以保持EarlGrey版本是最新的。">
 <meta name="twitter:image" content="https://t1.aixinxi.net/o_1cdmfn59h8u11ken1jbfjep1orla.png-w.jpg">
 
@@ -121,7 +124,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/17/EarlGrey-Cocoapods安装的翻译/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/17/EarlGrey-install and run的翻译/"/>
 
 
 
@@ -131,7 +134,7 @@
   };
 </script>
 
-  <title>EarlGrey-Cocoapods安装的翻译 | Crowdfunding time</title>
+  <title>EarlGrey-install and run的翻译 | Crowdfunding time</title>
   
 
 
@@ -320,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/17/EarlGrey-Cocoapods安装的翻译/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/17/EarlGrey-install and run的翻译/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李奕霖">
@@ -337,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">EarlGrey-Cocoapods安装的翻译</h1>
+          <h1 class="post-title" itemprop="name headline">EarlGrey-install and run的翻译</h1>
         
 
         <div class="post-meta">
@@ -385,8 +388,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/17/EarlGrey-Cocoapods安装的翻译/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/17/EarlGrey-Cocoapods安装的翻译/" itemprop="commentCount"></span>
+                <a href="/2018/05/17/EarlGrey-install and run的翻译/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/17/EarlGrey-install and run的翻译/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -440,6 +443,29 @@
 </li>
 </ol>
 <h3 id="第3步：打开workspace并验证你是否看到EarlGrey。"><a href="#第3步：打开workspace并验证你是否看到EarlGrey。" class="headerlink" title="第3步：打开workspace并验证你是否看到EarlGrey。"></a>第3步：打开workspace并验证你是否看到EarlGrey。</h3><p>成功运行<code>pod install</code>命令后，打开生成的workspace并在<code>Pods /</code>目录中找到安装的EarlGrey。 生成的<code>Pods /</code>project应该类似于：<img src="https://t1.aixinxi.net/o_1cdmjqvuj7rum7m18o31ubd1vgsa.png-w.jpg" alt=""></p>
+<h2 id="配置并运行你的第一次测试"><a href="#配置并运行你的第一次测试" class="headerlink" title="配置并运行你的第一次测试"></a>配置并运行你的第一次测试</h2><p>因为EarlGrey基于XCTest，所以在Xcode中创建你的第一个测试用例就像创建一个新的Unit Test类一样简单。 小心不要将Unit Test类与UI Test类混为一谈。 UI Test类使用添加到XCTest中的新UI Testing特性，但尚未与EarlGrey兼容。</p>
+<ol>
+<li><p>Ctrl +单击你的应用程序源文件的文件夹，然后选择New file….将出现以下对话框：<img src="https://t1.aixinxi.net/o_1cdmlspvanh0h7tpam1ucn12ica.png-w.jpg" alt=""></p>
+</li>
+<li><p>选择Unit Test类，然后单击Next。 在以下屏幕上，输入测试用例的名称。 对于这个例子，让我们把它称作MyFirstEarlGreyTest：<img src="https://t1.aixinxi.net/o_1cdmm2be7prcnpd1ec61r7u1d4ia.png-w.jpg" alt=""></p>
+</li>
+<li><p>在下一个屏幕上，确保测试用例与Unit Test target相关联。 在这种情况下，我们的target是SimpleAppTests：<img src="https://t1.aixinxi.net/o_1cdmm518n11a4qtt1qp71n2p4bva.png-w.jpg" alt=""></p>
+</li>
+<li><p>Xcode将为我们创建一个新的测试用例，但我们不需要其中的大部分代码。 让我们更改代码，只留下一个测试方法，并包含EarlGrey框架，如下所示：</p>
+<p>对于Swift测试：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import EarlGrey</span><br><span class="line"></span><br><span class="line">class MyFirstEarlGreyTest: XCTestCase &#123;</span><br><span class="line"></span><br><span class="line">  func testExample() &#123;</span><br><span class="line">    // Your test actions and assertions will go here.</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于Objective-C测试：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@import EarlGrey;</span><br><span class="line"></span><br><span class="line">@interface MyFirstEarlGreyTest : XCTestCase</span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation MyFirstEarlGreyTest</span><br><span class="line"></span><br><span class="line">- (void)testExample &#123;</span><br><span class="line">  // Your test actions and assertions will go here.</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>现在让我们添加一个简单的EarlGrey断言，检查是否存在window并证明它是显示的。 以下是最终的测试结果：</p>
+<p>对于Swift测试：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">func testExample() &#123;</span><br><span class="line">  EarlGrey.selectElement(with: grey_keyWindow())</span><br><span class="line">    .assert(grey_sufficientlyVisible())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于Objective-C测试：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- (void)testPresenceOfKeyWindow &#123;</span><br><span class="line">  [[EarlGrey selectElementWithMatcher:grey_keyWindow()]</span><br><span class="line">      assertWithMatcher:grey_sufficientlyVisible()];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>就是这样！ 与其他任何单元测试一样，此测试将显示在测试导航器中，因此你只需单击运行图标或按Ctrl +单击测试名称，然后选择测试“testPresenceOfKeyWindow”即可运行该测试。 由于这是一个常规的单元测试，因此你可以在测试和应用程序代码中放置断点，也可以照常使用内置工具。</p>
+</li>
+</ol>
 
       
     </div>
@@ -462,7 +488,7 @@
       </li>
       <li class="post-copyright-link">
         <strong>本文链接：</strong>
-        <a href="/2018/05/17/EarlGrey-Cocoapods安装的翻译/" title="EarlGrey-Cocoapods安装的翻译">2018/05/17/EarlGrey-Cocoapods安装的翻译/</a>
+        <a href="/2018/05/17/EarlGrey-install and run的翻译/" title="EarlGrey-install and run的翻译">2018/05/17/EarlGrey-install and run的翻译/</a>
       </li>
       <li class="post-copyright-license">
         <strong>版权声明：</strong>
@@ -654,7 +680,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装和运行"><span class="nav-number">1.</span> <span class="nav-text">安装和运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装EarlGrey"><span class="nav-number">2.</span> <span class="nav-text">安装EarlGrey</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CocoaPods安装"><span class="nav-number">3.</span> <span class="nav-text">CocoaPods安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第1步：设置单元测试目标"><span class="nav-number">3.1.</span> <span class="nav-text">第1步：设置单元测试目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第2步：添加EarlGrey作为依赖框架"><span class="nav-number">3.2.</span> <span class="nav-text">第2步：添加EarlGrey作为依赖框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第3步：打开workspace并验证你是否看到EarlGrey。"><span class="nav-number">3.3.</span> <span class="nav-text">第3步：打开workspace并验证你是否看到EarlGrey。</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装和运行"><span class="nav-number">1.</span> <span class="nav-text">安装和运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装EarlGrey"><span class="nav-number">2.</span> <span class="nav-text">安装EarlGrey</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CocoaPods安装"><span class="nav-number">3.</span> <span class="nav-text">CocoaPods安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第1步：设置单元测试目标"><span class="nav-number">3.1.</span> <span class="nav-text">第1步：设置单元测试目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第2步：添加EarlGrey作为依赖框架"><span class="nav-number">3.2.</span> <span class="nav-text">第2步：添加EarlGrey作为依赖框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第3步：打开workspace并验证你是否看到EarlGrey。"><span class="nav-number">3.3.</span> <span class="nav-text">第3步：打开workspace并验证你是否看到EarlGrey。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置并运行你的第一次测试"><span class="nav-number">4.</span> <span class="nav-text">配置并运行你的第一次测试</span></a></li></ol></div>
             
 
           </div>
