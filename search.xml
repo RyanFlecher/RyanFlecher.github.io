@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[EarlGrey/README的翻译]]></title>
+    <title><![CDATA[EarlGrey-Cocoapods安装的翻译]]></title>
+    <url>%2F2018%2F05%2F17%2FEarlGrey-Cocoapods%E5%AE%89%E8%A3%85%E7%9A%84%E7%BF%BB%E8%AF%91%2F</url>
+    <content type="text"><![CDATA[安装和运行本文档向你展示如何安装EarlGrey并介绍如何配置和运行您的第一次测试。 安装EarlGrey您可以通过三种方式将EarlGrey添加到Xcode项目中：使用CocoaPods，Carthage或通过XCode Pjoject手动集成。 对于EarlGrey，我们强烈推荐CocoaPods作为安装的最佳方式，以保持EarlGrey版本是最新的。 CocoaPods安装第1步：设置单元测试目标 要创建一个新的单元测试（XCTest）目标，请在Xcode Project Navigator中选择您的项目，然后从菜单中单击Editor → Add Target… 在添加目标窗口中，选择 iOS → Test → iOS Unit Testing Bundle：点击Next →Add a Test Target Name→Finish. Test Target必须有与之相关的Scheme。要添加一个Scheme，请转到Product → Scheme → Manage Schemes，按（+）号，然后从下拉菜单中选择目标。确保Container已设置为需要测试的应用。然后点击Close。 第2步：添加EarlGrey作为依赖框架 通过gem install earlgrey命令安装Earl gem。如果你还没有Ruby或者不是最新版本，请参阅Ruby 安装部分。 在Podfile的test target部分里，添加EarlGrey作为依赖项。 1234567target TEST_TARGET do project PROJECT_NAME use_frameworks! # Required for Swift Test Targets only inherit! :search_paths # Required for not double-linking libraries in the app and test targets. pod &apos;EarlGrey&apos;end 完成后，请执行pod install。 有关不同版本之间的兼容性，请参阅此文档。 要下载特定版本的gem，请使用gem install earlgrey -v x.y.z. 第3步：打开workspace并验证你是否看到EarlGrey。成功运行pod install命令后，打开生成的workspace并在Pods /目录中找到安装的EarlGrey。 生成的Pods /project应该类似于：]]></content>
+      <categories>
+        <category>翻译</category>
+      </categories>
+      <tags>
+        <tag>翻译</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[EarlGrey-README的翻译]]></title>
     <url>%2F2018%2F05%2F14%2FEarlGrey-README%E7%9A%84%E7%BF%BB%E8%AF%91%2F</url>
     <content type="text"><![CDATA[EarlGreyEarlGrey是一个基于原生的iOS UI自动化测试框架，它使你能够编写清晰、简洁的测试用例。 借助EarlGrey框架，可以访问增强的同步功能。 EarlGrey自动与UI，网络请求和各种队列同步，但仍然允许你根据需要手动实施自定义时间。 EarlGrey的同步功能有助于确保UI在执行操作之前处于稳定状态。这极大地提高了测试稳定性并使测试具有高度可重复性 EarlGrey与XCTest框架协同工作，并与Xcode的Test Navigator集成，因此你可以直接从Xcode或命令行（使用xcodebuild）运行测试。 开始用户的说明书位于EarlGrey/docs文件夹中。要开始，请查看EarlGrey功能，检查兼容性，然后安装/运行EarlGrey与测试目标。在完成所有配置后，请查看EarlGrey API并开始编写自己的测试。 帮助如果你需要帮助，可以使用多种渠道。首先检查FAQ。如果你在阅读FAQ后遇到更多问题，请参阅Known Issues。你可以在位于stackoverflow.com的#earlgrey标签询问更多具体问题。你也可以在我们的Google小组与我们开始新的讨论，或请求加入我们的协作频道。 分析为了提升和改进EarlGrey，该框架收集使用数据并将其上传到Google Analytics。更具体地说，该框架收集MD5加密后的Bundle ID，测试类名称和测试方法名称。这些信息使我们能够测量使用量。有关分析集合的更多详细信息，请仔细阅读包含实现细节的GREYAnalytics.m文件。如果他们愿意，用户可以通过在他们的测试中禁用Analytics配置设置来选择退出 - （void）setUp方法： In Objective-C: 12// Disable analytics.[[GREYConfiguration sharedInstance] setValue:@(NO) forConfigKey:kGREYConfigKeyAnalyticsEnabled]; In Swift: 12// Disable analytics.GREYConfiguration.sharedInstance().setValue(false, forConfigKey: kGREYConfigKeyAnalyticsEnabled) 贡献代码 在做出贡献之前，请确保你遵循了CONTRIBUTING.md中的指导原则。 建立一个EarlGrey项目 从GitHub Clone EarlGrey。 1git clone https://github.com/google/EarlGrey.git 在Clone EarlGrey后，使用setup-earlgrey.sh下载所有依赖项。 脚本运行完成后，打开EarlGrey.xcodeproj并确认所有target成功构建。 你现在可以使用EarlGrey.xcodeproj对框架进行更改。]]></content>
       <categories>
