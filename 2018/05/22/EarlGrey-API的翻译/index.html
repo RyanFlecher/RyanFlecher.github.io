@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.6" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.6">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=6.0.6">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.6">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.6" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.0.6',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="APIEarlGrey包含三组主要的API：  交互API 同步API 其他API  交互APIEarlGrey的测试用例由一系列的UI元素交互组成。 每个交互包括：  选择一个元素进行交互 对其执行操作，与(&amp;amp;&amp;amp;) /或(||)  做出断言来验证元素的状态和行为">
+<meta name="keywords" content="翻译">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EarlGrey-API的翻译">
+<meta property="og:url" content="http://yoursite.com/2018/05/22/EarlGrey-API的翻译/index.html">
+<meta property="og:site_name" content="Crowdfunding time">
+<meta property="og:description" content="APIEarlGrey包含三组主要的API：  交互API 同步API 其他API  交互APIEarlGrey的测试用例由一系列的UI元素交互组成。 每个交互包括：  选择一个元素进行交互 对其执行操作，与(&amp;amp;&amp;amp;) /或(||)  做出断言来验证元素的状态和行为">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-22T10:42:57.176Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="EarlGrey-API的翻译">
+<meta name="twitter:description" content="APIEarlGrey包含三组主要的API：  交互API 同步API 其他API  交互APIEarlGrey的测试用例由一系列的UI元素交互组成。 每个交互包括：  选择一个元素进行交互 对其执行操作，与(&amp;amp;&amp;amp;) /或(||)  做出断言来验证元素的状态和行为">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/22/EarlGrey-API的翻译/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>EarlGrey-API的翻译 | Crowdfunding time</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> 
+
+<div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Crowdfunding time</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">想学啊，我教你啊</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+          
+  <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+</li>
+
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/22/EarlGrey-API的翻译/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李奕霖">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Crowdfunding time">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">EarlGrey-API的翻译</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-22T18:40:31+08:00">2018-05-22</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/翻译/" itemprop="url" rel="index"><span itemprop="name">翻译</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/22/EarlGrey-API的翻译/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/22/EarlGrey-API的翻译/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="API"><a href="#API" class="headerlink" title="API"></a>API</h1><p>EarlGrey包含三组主要的API：</p>
+<ul>
+<li>交互API</li>
+<li>同步API</li>
+<li>其他API</li>
+</ul>
+<h3 id="交互API"><a href="#交互API" class="headerlink" title="交互API"></a>交互API</h3><p>EarlGrey的测试用例由一系列的UI元素交互组成。 每个交互包括：</p>
+<ul>
+<li>选择一个元素进行交互</li>
+<li>对其执行操作，与(&amp;&amp;) /或(||) </li>
+<li>做出断言来验证元素的状态和行为</li>
+</ul>
+<a id="more"></a>
+<p>为了体现上述行为，交互API由以下内容组成：</p>
+<ul>
+<li>选中元素相关API</li>
+<li>操作相关API</li>
+<li>断言相关API</li>
+</ul>
+<p>这些API中的每一个接口都考虑到了可扩展性，让用户可以进行灵活的定制，同时保留了测试代码的可读性。阅读下面的代码片段：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[EarlGrey selectElementWithMatcher:grey_accessibilityID(@&quot;ClickMe&quot;)];</span><br></pre></td></tr></table></figure>
+<p>它显示了如何通过Accessibility Identifier为<code>ClickMe</code>的元素来启动交互。选择元素后，你可以以操作该元素或者断言的方式继续交互。 EarlGrey可以使用任何符合<a href="https://developer.apple.com/documentation/uikit/accessibility/uiaccessibility" target="_blank" rel="noopener">UIAccessibility protocol</a>的元素，而不仅仅是<code>UIViews</code>，这就让测试用例可以执行更丰富的交互。</p>
+<p>你可以将元素选择和操作在一行代码中完成。例如，点击一个Accessibility Identity为<code>ClickMe</code>的元素可以这样写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[EarlGrey selectElementWithMatcher:grey_accessibilityID(@&quot;ClickMe&quot;)]</span><br><span class="line">    performAction:grey_tap()];</span><br></pre></td></tr></table></figure>
+<p>注意：<code>selectElementWithMatcher</code>:不返回一个元素， 它只是标志着互动的开始。</p>
+<p>你可以将元素选择和断言在一行代码中完成。下面的代码将展示选择一个Accessibility Identity为<code>ClickMe</code>的元素并判断它是否显示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[EarlGrey selectElementWithMatcher:grey_accessibilityID(@&quot;ClickMe&quot;)]</span><br><span class="line">    assertWithMatcher:grey_sufficientlyVisible()];</span><br></pre></td></tr></table></figure>
+<p>最后，你可以按顺序执行操作和断言。 下面的代码展示了查找Accessibility Identity为<code>ClickMe</code>的元素，点击它并判断其是否显示。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[[[EarlGrey selectElementWithMatcher:grey_accessibilityID(@&quot;ClickMe&quot;)]</span><br><span class="line">    performAction:grey_tap()]</span><br><span class="line">    assertWithMatcher:grey_notVisible()];</span><br></pre></td></tr></table></figure>
+<p>以下是一个简单的交互模板：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[[[EarlGrey selectElementWithMatcher:&lt;element_matcher&gt;]</span><br><span class="line">    performAction:&lt;action&gt;]</span><br><span class="line">    assertWithMatcher:&lt;assertion_matcher&gt;];</span><br></pre></td></tr></table></figure>
+<p>其中<code>&lt;element_matcher&gt;</code>和<code>&lt;assertion_matcher&gt;</code>是包含在<code>GREYMatchers.h</code>中的匹配器，<code>&lt;action&gt;</code>为GREYAction.h中的操作方法。因为每个匹配器或操作都有一个简写的方法，所以可以使用<code>grey_sufficientlyVisible（）</code>，来替代<code>[GREYMatchers matcherForSufficientlyVisible]</code>。用简写方法的方式默认是允许的。 要禁用它，请将<code>#define GREY_DISABLE_SHORTHAND 1</code>添加到项目的头文件。</p>
+<h4 id="选中元素API"><a href="#选中元素API" class="headerlink" title="选中元素API"></a>选中元素API</h4><p>使用Selection API来定位屏幕中的UI元素。当API接收到Matcher后会在所有UI分层中定位对应的元素来发生交互。在EarlGrey中，matchers支持一种类似于<a href="https://github.com/hamcrest/OCHamcrest" target="_blank" rel="noopener">OCHamcrest</a> matchers的API。你可以使用与或逻辑组合matchers，允许你创建匹配规则，以确定UI分层中的任何元素。</p>
+<h5 id="EarlGrey-Matchers"><a href="#EarlGrey-Matchers" class="headerlink" title="EarlGrey Matchers"></a>EarlGrey Matchers</h5><p>所有EarlGrey Matchers都可以在<a href="https://github.com/google/EarlGrey/blob/master/EarlGrey/Matcher/GREYMatchers.m" target="_blank" rel="noopener">GREYMatchers</a>工厂类中找到。 查找UI元素的最佳方法是使用它的accessibility properties。我们强烈建议使用<a href="https://developer.apple.com/documentation/uikit/uiaccessibilityidentification" target="_blank" rel="noopener">accessibility identifier</a>，因为它是一个元素的唯一标识。 使用<code>grey_accessibilityID（）</code>作为matcher，通过其accessibility traits来定位UI元素。或者使用<code>grey_accessibilityLabel（）</code>作为 accessibility labels的匹配器。</p>
+<p>Matcher可能会匹配多个元素：例如，<code>grey_sufficientlyVisible（）</code>将匹配所有可见的UI元素。 在这种情况下，你必须缩小选择范围，直到它可以唯一标识一个UI元素。 你可以通过将matchers与<code>grey_allOf（）</code>，<code>grey_anyOf（）</code>，<code>grey_not（）</code>结合使用或通过向root matchers提供<code>inRoot</code>方法来缩小选择范围，从而使matchers更加准确。</p>
+<p>来看下面的例子。</p>
+<p>第一个，使用组合的matchers，以下这段代码将查找accessibility label为<code>Send</code>的元素并且显示在当前屏幕。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">id&lt;GREYMatcher&gt; visibleSendButtonMatcher =</span><br><span class="line">    grey_allOf(grey_accessibilityLabel(@&quot;Send&quot;), grey_sufficientlyVisible(), nil);</span><br><span class="line"></span><br><span class="line">[[EarlGrey selectElementWithMatcher:visibleSendButtonMatcher]</span><br><span class="line">    performAction:grey_tap()];</span><br></pre></td></tr></table></figure>
+<p>请注意，使用<code>grey_allOf</code>命令很重要。 如果先使用<code>grey_sufficientlyVisible</code>，则将检查整个应用程序中的每个元素的可见性。 从大多数选项中（比如accessibility label和accessibility id）中选择matchers至关重要。</p>
+<p>接下来，使用<code>inRoot</code>，以下这段代码将查找accessibility label为<code>Send</code>且被包含在<code>SendMessageView</code>类实例化对象中的UI元素。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[[[EarlGrey selectElementWithMatcher:grey_accessibilityLabel(@&quot;Send&quot;)]</span><br><span class="line">    inRoot:grey_kindOfClass([SendMessageView class])]</span><br><span class="line">    performAction:grey_tap()];</span><br></pre></td></tr></table></figure>
+<p>注意：为了与Swift兼容，我们分别使用<code>grey_allOfMatchers（）</code>和<code>grey_anyOfMatchers（）</code>来代替<code>grey_allOf（）</code>和<code>grey_anyOf（）</code>。</p>
+<h5 id="自定义-Matchers"><a href="#自定义-Matchers" class="headerlink" title="自定义 Matchers"></a>自定义 Matchers</h5><p>要创建自定义matchers，请使用基于block的<a href="https://github.com/google/EarlGrey/blob/master/EarlGrey/Matcher/GREYElementMatcherBlock.h" target="_blank" rel="noopener">GREYElementMatcherBlock</a>类。 例如，以下代码用来与没有子视图的视图匹配。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">+ (id&lt;GREYMatcher&gt;)matcherForViewsWithoutSubviews &#123;</span><br><span class="line">  MatchesBlock matches = ^BOOL(UIView *view) &#123;</span><br><span class="line">    return view.subviews.count == 0;</span><br><span class="line">  &#125;;</span><br><span class="line">  DescribeToBlock describe = ^void(id&lt;GREYDescription&gt; description) &#123;</span><br><span class="line">    [description appendText:@&quot;Views without subviews&quot;];</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  return [[GREYElementMatcherBlock alloc] initWithMatchesBlock:matches</span><br><span class="line">                                              descriptionBlock:describe];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>MatchesBlock</code>除了接受<code>UIView *</code>之外，也可以接受<code>id</code>类型。当matcher用于选取元素时，需要使用id类型。以下matcher示例通用于所有UI元素类型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">+ (id&lt;GREYMatcher&gt;)matcherForElementWithoutChildren &#123;</span><br><span class="line">  MatchesBlock matches = ^BOOL(id element) &#123;</span><br><span class="line">    if ([element isKindOfClass:[UIView class]]) &#123;</span><br><span class="line">      return ((UIView *)element).subviews.count == 0;</span><br><span class="line">    &#125;</span><br><span class="line">    // Handle accessibility elements here.</span><br><span class="line">    return ...;</span><br><span class="line">  &#125;;</span><br><span class="line">  DescribeToBlock describe = ^void(id&lt;GREYDescription&gt; description) &#123;</span><br><span class="line">    [description appendText:@&quot;UI element without children&quot;];</span><br><span class="line">  &#125;;</span><br><span class="line">  return [[GREYElementMatcherBlock alloc] initWithMatchesBlock:matches</span><br><span class="line">                                              descriptionBlock:describe];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个matcher可以在测试中用于选取没有任何子元素（或子视图）的元素并且双击它（假设该方法是在<code>CustomMatchers</code>类中声明的）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[EarlGrey selectElementWithMatcher:[CustomMatchers matcherForElementWithoutChildren]]</span><br><span class="line">    performAction:grey_doubleTap()];</span><br></pre></td></tr></table></figure>
+<h5 id="选取未显示的UI元素"><a href="#选取未显示的UI元素" class="headerlink" title="选取未显示的UI元素"></a>选取未显示的UI元素</h5><p>在某些情况下，UI元素可能被隐藏或在屏幕外，需要某些交互才能将其展示在屏幕上。 常见示例包括滚动视图中元素未被滚动至可见，放大地图至街景模式可见的UI元素，浏览自定义布局的UICollectionView等。</p>
+<p>例如，以下代码通过<code>aButtonMarcher</code>匹配一个元素，此元素在<code>aScrollViewMatcher</code>匹配的滚动视图中，经过重复向下滚动（每次减少50points）找到该元素并点击</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[[[EarlGrey selectElementWithMatcher:aButtonMatcher]</span><br><span class="line">    usingSearchAction:grey_scrollInDirection(kGREYDirectionDown, 50)</span><br><span class="line"> onElementWithMatcher:aScrollViewMatcher]</span><br><span class="line">    performAction:grey_tap()];</span><br></pre></td></tr></table></figure>
+<p>以下代码用来定位一个UITableView视图中的指定Cell，<code>aTableViewMatcher</code>匹配了该表格视图，通过重复向下滚动（每次减少50points）找到<code>aCellMatcher</code>定位的指定Cell。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[[[EarlGrey selectElementWithMatcher:aCellMatcher]</span><br><span class="line">    usingSearchAction:grey_scrollInDirection(kGREYDirectionUp, 50)</span><br><span class="line"> onElementWithMatcher:aTableViewMatcher]</span><br><span class="line">    performAction:grey_tap()];</span><br></pre></td></tr></table></figure>
+<h4 id="操作API"><a href="#操作API" class="headerlink" title="操作API"></a>操作API</h4><p>使用Action API来描述在选定UI元素上的测试操作。</p>
+<h5 id="EarlGrey-Actions"><a href="#EarlGrey-Actions" class="headerlink" title="EarlGrey Actions"></a>EarlGrey Actions</h5><p>所有EarlGrey actions都在<a href="https://github.com/google/EarlGrey/blob/master/EarlGrey/Action/GREYActions.h" target="_blank" rel="noopener">GREYActions</a>工厂类中。 最常见的操作是使用<code>grey_tap（）</code>方法点击指定元素：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[EarlGrey selectElementWithMatcher:grey_accessibilityID(@&quot;TapMe&quot;)]</span><br><span class="line">    performAction:grey_tap()];</span><br></pre></td></tr></table></figure>
+<p>如果某个操作触发UI层次结构中的更改，则EarlGrey会将每个操作（包括链式操作）与UI同步，以确保在执行下一个操作之前它处于稳定状态。</p>
+<p>并非所有操作都可以在所有元素上执行，例如，无法对不可见的元素执行点按操作。为了确保操作可执行，每次执行之前要确保GREYMatcher定位到该元素。未满足这些条件会导致抛出异常并将测试标记为失败。 为了避免测试失败，可以调用performAction：error：获取包含错误详情的NSError对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">NSError *error;</span><br><span class="line">[[EarlGrey selectElementWithMatcher:grey_accessibilityID(@&quot;Non-Existent-Ax-Id&quot;)]</span><br><span class="line">    performAction:grey_tap()</span><br><span class="line">            error:&amp;error];</span><br></pre></td></tr></table></figure>
+<p>在上面的例子中，在不存在的元素上执行EarlGrey交互时不会抛出异常。 相反，传递的错误对象将保存故障详细信息，并且不会立即使测试失败。 然后可以查看错误详细信息以查找故障详细信息。</p>
+<h5 id="自定义操作"><a href="#自定义操作" class="headerlink" title="自定义操作"></a>自定义操作</h5><p>自定义操作可以通过遵循<a href="https://github.com/google/EarlGrey/blob/master/EarlGrey/Action/GREYAction.h" target="_blank" rel="noopener">GREYAction</a>协议的方式来创建。为了方便起见，你可以使用已遵循GREYAction协议的<a href="https://github.com/google/EarlGrey/blob/master/EarlGrey/Action/GREYActionBlock.h" target="_blank" rel="noopener">GREYActionBlock</a>，并允许你以block的形式自定义操作。 以下代码用block自定义一个操作（animateWindow）用来设置选中window的动画：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">- (id&lt;GREYAction&gt;)animateWindowAction &#123;</span><br><span class="line">  return [GREYActionBlock actionWithName:@&quot;Animate Window&quot;</span><br><span class="line">                             constraints:nil</span><br><span class="line">                            performBlock:^(id element, NSError *__strong *errorOrNil) &#123;</span><br><span class="line">    // First, make sure the element is attached to a window.</span><br><span class="line">    if ([element window] == nil) &#123;</span><br><span class="line">      // Populate error.</span><br><span class="line">      *errorOrNil = ...</span><br><span class="line">      // Indicates that the action failed.</span><br><span class="line">      return NO;</span><br><span class="line">    &#125;</span><br><span class="line">    // Invoke a custom selector that animates the window of the element.</span><br><span class="line">    [element animateWindow];</span><br><span class="line">    // Indicates that the action was executed successfully.</span><br><span class="line">    return YES;</span><br><span class="line">  &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="断言API"><a href="#断言API" class="headerlink" title="断言API"></a>断言API</h4><p>使用断言API来验证UI元素的状态和行为。</p>
+<h5 id="使用Matchers断言"><a href="#使用Matchers断言" class="headerlink" title="使用Matchers断言"></a>使用Matchers断言</h5><p>使用<code>assertWithMatcher：</code>用<a href="https://github.com/google/EarlGrey/blob/master/EarlGrey/Matcher/GREYMatcher.h" target="_blank" rel="noopener">GREYMatcher</a>执行断言。 所选元素将通过matcher判断其状态。例如，以下代码判断accessibility ID为ClickMe的元素是否可见，如果元素在屏幕上不可见，则测试失败。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[EarlGrey selectElementWithMatcher:grey_accessibilityID(@&quot;ClickMe&quot;)]</span><br><span class="line">    assertWithMatcher:grey_sufficientlyVisible()];</span><br></pre></td></tr></table></figure>
+<p>为了防止测试失败，可以为assertWithMatcher：error：方法提供一个NSError对象，如下面的代码所示。 相比直接测试失败，它将为你提供一个NSError对象，其中包含有关失败的详细信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">NSError *error;</span><br><span class="line">[[EarlGrey selectElementWithMatcher:grey_accessibilityID(@&quot;ClickMe&quot;)]</span><br><span class="line">    assertWithMatcher:grey_sufficientlyVisible()</span><br><span class="line">                error:&amp;error];</span><br></pre></td></tr></table></figure>
+<p>你也可以使用<code>assert</code>方法传递一个<a href="https://github.com/google/EarlGrey/blob/master/EarlGrey/Assertion/GREYAssertion.h" target="_blank" rel="noopener"><code>GREYAssertion</code></a>实例来执行断言。我们建议你尽可能使用<code>assertWithMatcher：</code>创建断言。Matchers是轻量级的，并且适用于简单的断言。 然而，对于需要执行复杂逻辑的断言（如操作UI）再继续断言，自定义<code>GREYAssertion</code>可能是更好的选择。</p>
+<h5 id="自定义断言"><a href="#自定义断言" class="headerlink" title="自定义断言"></a>自定义断言</h5><p>你可以使用<a href="https://github.com/google/EarlGrey/blob/master/EarlGrey/Assertion/GREYAssertion.h" target="_blank" rel="noopener"><code>GREYAssertion</code></a>协议或<a href="https://github.com/google/EarlGrey/blob/master/EarlGrey/Assertion/GREYAssertionBlock.h" target="_blank" rel="noopener"><code>GREYAssertionBlock</code></a>来创建自定义断言。以下代码使用<code>GREYAssertionBlock</code>编写断言来检查视图的alpha值是否等于预期的值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">+ (id&lt;GREYAssertion&gt;)hasAlpha:(CGFloat)alpha &#123;</span><br><span class="line">  return [GREYAssertionBlock assertionWithName:@&quot;Has Alpha&quot;</span><br><span class="line">                                assertionBlock:^(UIView *view, NSError *__strong *errorOrNil) &#123;</span><br><span class="line">    if (view.alpha != alpha) &#123;</span><br><span class="line">      NSString *reason =</span><br><span class="line">        [NSString stringWithFormat:@&quot;Alpha value doesn&apos;t match for %@&quot;, view];</span><br><span class="line">      // Check if errorOrNil was provided, if so populate it with relevant details.</span><br><span class="line">      if (errorOrNil) &#123;</span><br><span class="line">        *errorOrNil = ...</span><br><span class="line">      &#125;</span><br><span class="line">      // Indicates assertion failed.</span><br><span class="line">      return NO;</span><br><span class="line">    &#125;</span><br><span class="line">    // Indicates assertion passed.</span><br><span class="line">    return YES;</span><br><span class="line">  &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：不要认为断言是针对有效的UI元素运行的。 在验证断言之前，你需要自己检查UI元素以确保UI元素处于有效状态。 例如，下面的代码就是在执行断言之前判断元素是否存在：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">+ (id&lt;GREYAssertion&gt;)hasAlpha:(CGFloat)alpha &#123;</span><br><span class="line">  return [GREYAssertionBlock assertionWithName:@&quot;Has Alpha&quot;</span><br><span class="line">                                assertionBlock:^(UIView *view, NSError *__strong *errorOrNil) &#123;</span><br><span class="line">    // Assertions can be performed on nil elements. Make sure view isn’t nil.</span><br><span class="line">    if (view == nil) &#123;</span><br><span class="line">      // Check if errorOrNil was provided, if so populate it with relevant details.</span><br><span class="line">      if (errorOrNil) &#123;</span><br><span class="line">        *errorOrNil = [NSError errorWithDomain:kGREYInteractionErrorDomain</span><br><span class="line">                                        code:kGREYInteractionElementNotFoundErrorCode</span><br><span class="line">                                    userInfo:nil];</span><br><span class="line">      &#125;</span><br><span class="line">      return NO;</span><br><span class="line">    &#125;</span><br><span class="line">    // Perform rest of the assertion logic.</span><br><span class="line">    ...</span><br><span class="line">    // Indicates assertion passed.</span><br><span class="line">    return YES;</span><br><span class="line">  &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者，你可以创建一个和<a href="https://github.com/google/EarlGrey/blob/master/EarlGrey/Assertion/GREYAssertion.h" target="_blank" rel="noopener">GREYAssertion</a>类相符的类。</p>
+<h5 id="错误处理器"><a href="#错误处理器" class="headerlink" title="错误处理器"></a>错误处理器</h5><p>默认情况下，在发生异常时，EarlGrey会使用错误处理器。 默认处理器会记录异常，截取屏幕截图，然后打印其路径以及其他有用的信息。你可以选择自定义错误处理器并替换掉全局默认的错误处理器，并使用<code>EarlGrey setFailureHandler：</code>安装在API上。 要创建自定义错误处理器，请编写一个遵循<a href="https://github.com/google/EarlGrey/blob/master/EarlGrey/Exception/GREYFailureHandler.h" target="_blank" rel="noopener">GREYFailureHandler</a>协议的类：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@interface@interface MyFailureHandler : NSObject &lt;GREYFailureHandler&gt;</span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation MyFailureHandler</span><br><span class="line"></span><br><span class="line">- (void)handleException:(GREYFrameworkException *)exception details:(NSString *)details &#123;</span><br><span class="line">  // Log the failure and state of the app if required.</span><br><span class="line">  // Call thru to XCTFail() with an appropriate error message.</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)setInvocationFile:(NSString *)fileName</span><br><span class="line">        andInvocationLine:(NSUInteger)lineNumber &#123;</span><br><span class="line">  // Record the file name and line number of the statement which was executing before the</span><br><span class="line">  // failure occurred.</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<h5 id="断言宏"><a href="#断言宏" class="headerlink" title="断言宏"></a>断言宏</h5><p>EarlGrey提供了自带的宏，可以在测试用例中用于断言和验证。 这些宏与XCTest提供的宏相似，档断言失败时调用全局的错误处理器。</p>
+<ul>
+<li><code>GREYAssert(expression, reason, ...)</code> — 如果表达式输出结果为false，则失败</li>
+<li><code>GREYAssertTrue(expression, reason, ...)</code> — 如果表达式输出结果为false，则失败。用于BOOL表达式</li>
+<li><code>GREYAssertFalse(expression, reason, ...)</code> — 如果表达式输出结果为true，则失败。用于BOOL表达式</li>
+<li><code>GREYAssertNotNil(expression, reason, ...)</code> — 如果表达式输出结果为nil，则失败。</li>
+<li><code>GREYAssertNil(expression, reason, ...)</code> — 如果表达式输出结果非nil，则失败。</li>
+<li><code>GREYAssertEqual(left, right, reason, ...)</code> — 如果 left != right时失败</li>
+<li><code>GREYAssertNotEqual(left, right, reason, ...)</code> — 如果 left == right时失败</li>
+<li><code>GREYAssertEqualObjects(left, right, reason, ...)</code> — 如果 [left isEqual:right]返回false时失败</li>
+<li><code>GREYAssertNotEqualObjects(left, right, reason, ...)</code> — 如果 [left isEqual:right]返回true时失败</li>
+<li><code>GREYFail(reason, ...)</code> — 失败后提供失败的原因</li>
+<li><code>GREYFailWithDetails(reason, details, ...)</code> — 失败后提供失败的原因和细节</li>
+</ul>
+<h5 id="布局测试"><a href="#布局测试" class="headerlink" title="布局测试"></a>布局测试</h5><p>EarlGrey提供API来验证UI元素的布局，例如验证元素X位于元素Y的左侧。布局断言是根据<a href="https://developer.apple.com/documentation/uikit/nslayoutconstraint" target="_blank" rel="noopener">NSLayoutConstraint</a>构建的。要验证布局，需要先创建一个约束来描述布局，选择一个约束它的元素，然后使用<code>grey_layout（…）</code>声明它与约束匹配。  请注意，<code>grey_layout（…）</code>接受的所有约束都必须满足。 这可以简单地描述复杂的布局断言。</p>
+<p>例如，以下代码就是指定元素位于所有其他元素右边。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">GREYLayoutConstraint *rightConstraint =</span><br><span class="line">    [GREYLayoutConstraint layoutConstraintWithAttribute:kGREYLayoutAttributeLeft</span><br><span class="line">                                              relatedBy:kGREYLayoutRelationGreaterThanOrEqual</span><br><span class="line">                                   toReferenceAttribute:kGREYLayoutAttributeRight</span><br><span class="line">                                             multiplier:1.0</span><br><span class="line">                                               constant:0.0];</span><br></pre></td></tr></table></figure>
+<p>你现在可以选择accessibility ID为<code>RelativeRight</code>的元素，并使用<code>grey_layout（@ [rightConstraint]）</code>来断言它是否位于accessibility ID为<code>TheReference</code>元素的右侧。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[EarlGrey selectElementWithMatcher:grey_accessibilityID(@”RelativeRight”)]</span><br><span class="line">    assertWithMatcher:grey_layout(@[rightConstraint], grey_accessibilityID(@”TheReference”))];</span><br></pre></td></tr></table></figure>
+<p>你还可以使用<code>layoutConstraintForDirection：</code>创建简单的定向约束。 以下代码效果等同于前面的示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GREYLayoutConstraint *rightConstraint =</span><br><span class="line">    [GREYLayoutConstraint layoutConstraintForDirection:kGREYLayoutDirectionRight</span><br><span class="line">                                  andMinimumSeparation:0.0];</span><br></pre></td></tr></table></figure>
+<h3 id="同步API"><a href="#同步API" class="headerlink" title="同步API"></a>同步API</h3><p>这些API可让你控制EarlGrey与待测应用程序同步。</p>
+<h4 id="GREYCondition"><a href="#GREYCondition" class="headerlink" title="GREYCondition"></a>GREYCondition</h4><p>如果你的测试用例需要特殊处理，你可以使用<code>GREYCondition</code>等待或同步某些条件。 <code>GREYCondition</code>采用返回<code>BOOL</code>的<code>block</code>来表示是否满足条件。 在继续测试剩余部分之前，框架会轮询该block直到满足条件。 以下代码说明如何创建和使用<code>GREYCondition</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">GREYCondition *myCondition = [GREYCondition conditionWithName:@&quot;my condition&quot;</span><br><span class="line">                                                        block:^BOOL &#123;</span><br><span class="line">  ... do your condition check here ...</span><br><span class="line">  return yesIfMyConditionWasSatisfied;</span><br><span class="line">&#125;];</span><br><span class="line">// Wait for my condition to be satisfied or timeout after 5 seconds.</span><br><span class="line">BOOL success = [myCondition waitWithTimeout:5];</span><br><span class="line">if (!success) &#123;</span><br><span class="line">  // Handle condition timeout.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="同步性"><a href="#同步性" class="headerlink" title="同步性"></a>同步性</h4><p>EarlGrey通过跟踪主要调度队列，主操作队列，网络，UI绘制和其他几个信号自动等待应用程序闲置，并仅在应用程序处于空闲状态时才执行交互。 但是，尽管有时应用程序处于忙碌状态，但仍可能会出现有些交互必须执行的情况。 例如，在消息类的应用程序中，照片可能正在上传并且相应UI绘制正在运行，此时仍然需要测试输入并发送文字信息。在这种情况下，可以使用<code>kGREYConfigKeySynchronizationEnabled</code>禁用EarlGrey的同步，如以下代码所示： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[GREYConfiguration sharedInstance] setValue:@(NO)</span><br><span class="line">                                forConfigKey:kGREYConfigKeySynchronizationEnabled];</span><br></pre></td></tr></table></figure>
+<p>一旦禁用，所有的交互都将继续进行，无需等待应用程序闲置，直到重新启用同步。 请注意，为了最大限度地提高测试效率，必须尽快重新启用同步。 而不是完全禁用同步，你可以配置同步参数以适应你的应用程序的需求。 例如：</p>
+<ul>
+<li><code>kGREYConfigKeyNSTimerMaxTrackableInterval</code> 用来设定非重复NSTimers的最大间隔。</li>
+<li><code>kGREYConfigKeyDispatchAfterMaxTrackableDelay</code> 通过 <code>dispatch_after</code>调用设定下一步操作的最大延迟时间。 </li>
+<li><code>kGREYConfigKeyURLBlacklistRegex</code> 用来设定不需要同步的URL黑名单的正则表达式</li>
+</ul>
+<p>在<a href="https://github.com/google/EarlGrey/blob/master/EarlGrey/Common/GREYConfiguration.h" target="_blank" rel="noopener">GREYConfiguration</a>中有几种类似的配置。 详细请参阅下面的一些特定用例。</p>
+<h4 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h4><p>默认情况下，EarlGrey会与所有网络请求同步，但你可以通过正则表达式来自定义无需同步的请求。如果要将一个URL列入黑名单中，请创建一个与其匹配的正则表达式，将其添加到<code>NSArray</code>并将其传递给<code>GREYConfiguration</code>。 对于多个网址，请通过为每个网址创建一个正则表达式来重复上述的过程。例如，要告诉框架不要同步<a href="http://www.google.com和www.youtube.com，请执行以下操作：" target="_blank" rel="noopener">www.google.com和www.youtube.com，请执行以下操作：</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">NSArray *blacklist = @[ @&quot;.*www\\.google\\.com&quot;, @&quot;.*www\\.youtube\\.com&quot; ];</span><br><span class="line">[[GREYConfiguration sharedInstance] setValue:blacklist</span><br><span class="line">                                forConfigKey:kGREYConfigKeyURLBlacklistRegex];</span><br></pre></td></tr></table></figure>
+<h4 id="交互超时"><a href="#交互超时" class="headerlink" title="交互超时"></a>交互超时</h4><p>无限重复的页面绘制或长时间运行的动画会影响同步。 绘制时间超过测试时间最大值的动画会导致超时异常。 为了避免这种情况，EarlGrey将绘制持续时间限制为5秒，并禁用重复绘制（连续绘制只运行一次）。要操作EarlGrey允许绘制运行更长时间，请更改允许的最大绘制持续时间值。 确保这不会导致你的测试超时。 以下代码将最大绘制持续时间增加到30秒。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[GREYConfiguration sharedInstance] setValue:@(30.0)</span><br><span class="line">                                forConfigKey:kGREYConfigKeyCALayerMaxAnimationDuration];</span><br></pre></td></tr></table></figure>
+<h4 id="非主线程调用"><a href="#非主线程调用" class="headerlink" title="非主线程调用"></a>非主线程调用</h4><p>由于分发队列的限制和EarlGrey与它们同步的方式，从<code>dispatch_queue</code>调用EarlGrey语句会导致活锁。 为了减少这种情况，我们引入了新的基于block的API来封装EarlGrey语句，并且可以从非主线程安全地调用它们：</p>
+<ul>
+<li><code>grey_execute_sync(void (^block)())</code> — 同步。 阻塞直到执行完成。</li>
+<li><code>grey_execute_async(void (^block)())</code> — 异步。</li>
+</ul>
+<h3 id="其他API"><a href="#其他API" class="headerlink" title="其他API"></a>其他API</h3><p>UI交互之外，你可以操作EarlGrey以多种方式控制设备和系统。</p>
+<h4 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h4><p><code>GREYConfiguration</code>类允许你配置框架。 它提供了配置同步，交互超时，操作约束checks，日志记录等方法。只要配置发生更改，它就会全局应用。 例如，以下代码将启用详细日志：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[GREYConfiguration sharedInstance] setValue:@(YES)</span><br><span class="line">                                forConfigKey:kGREYConfigKeyVerboseLogging];</span><br></pre></td></tr></table></figure>
+<h4 id="控制设备的朝向"><a href="#控制设备的朝向" class="headerlink" title="控制设备的朝向"></a>控制设备的朝向</h4><p>要旋转设备，请使用<code>[EarlGrey rotateDeviceToOrientation：errorOrNil：]</code>以指定设备朝向。例如，以下代码会操作你的系统（和你的应用）从竖屏变为横屏并且Home键位于右侧：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[EarlGrey rotateDeviceToOrientation:UIDeviceOrientationLandscapeLeft errorOrNil:nil];</span><br></pre></td></tr></table></figure>
+<p>你可以从以下模式中进行选择（有关更多信息，请参阅<a href="https://developer.apple.com/library/ios/documentation/uikit/reference/UIDevice_Class/Reference/UIDevice.html#//apple_ref/doc/c_ref/UIDeviceOrientation" target="_blank" rel="noopener">UIDeviceOrientation</a>）：</p>
+<ul>
+<li><code>UIDeviceOrientationUnknown</code></li>
+<li><code>UIDeviceOrientationPortrait</code></li>
+<li><code>UIDeviceOrientationPortraitUpsideDown</code></li>
+<li><code>UIDeviceOrientationLandscapeLeft</code></li>
+<li><code>UIDeviceOrientationLandscapeRight</code></li>
+<li><code>UIDeviceOrientationFaceUp</code></li>
+<li><code>UIDeviceOrientationFaceDown</code></li>
+</ul>
+<h4 id="摇一摇操作"><a href="#摇一摇操作" class="headerlink" title="摇一摇操作"></a>摇一摇操作</h4><p>你可以使用<code>[EarlGrey shakeDeviceWithError：]</code>模拟模拟器中的摇一摇操作。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+<div>    
+ 
+ 
+    <ul class="post-copyright">
+      <li class="post-copyright-author">
+          <strong>本文作者：</strong>李奕霖
+      </li>
+      <li class="post-copyright-link">
+        <strong>本文链接：</strong>
+        <a href="/2018/05/22/EarlGrey-API的翻译/" title="EarlGrey-API的翻译">2018/05/22/EarlGrey-API的翻译/</a>
+      </li>
+      <li class="post-copyright-license">
+        <strong>版权声明：</strong>
+        本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+      </li>
+    </ul>
+  
+</div>
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/翻译/" rel="tag"><i class="fa fa-tag"></i> 翻译</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/17/EarlGrey-install and run的翻译/" rel="next" title="EarlGrey-install and run的翻译">
+                <i class="fa fa-chevron-left"></i> EarlGrey-install and run的翻译
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.jpeg"
+                alt="李奕霖" />
+            
+              <p class="site-author-name" itemprop="name">李奕霖</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#API"><span class="nav-number">1.</span> <span class="nav-text">API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#交互API"><span class="nav-number">1.0.1.</span> <span class="nav-text">交互API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#选中元素API"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">选中元素API</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#EarlGrey-Matchers"><span class="nav-number">1.0.1.1.1.</span> <span class="nav-text">EarlGrey Matchers</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#自定义-Matchers"><span class="nav-number">1.0.1.1.2.</span> <span class="nav-text">自定义 Matchers</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#选取未显示的UI元素"><span class="nav-number">1.0.1.1.3.</span> <span class="nav-text">选取未显示的UI元素</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作API"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">操作API</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#EarlGrey-Actions"><span class="nav-number">1.0.1.2.1.</span> <span class="nav-text">EarlGrey Actions</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#自定义操作"><span class="nav-number">1.0.1.2.2.</span> <span class="nav-text">自定义操作</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#断言API"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">断言API</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用Matchers断言"><span class="nav-number">1.0.1.3.1.</span> <span class="nav-text">使用Matchers断言</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#自定义断言"><span class="nav-number">1.0.1.3.2.</span> <span class="nav-text">自定义断言</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#错误处理器"><span class="nav-number">1.0.1.3.3.</span> <span class="nav-text">错误处理器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#断言宏"><span class="nav-number">1.0.1.3.4.</span> <span class="nav-text">断言宏</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#布局测试"><span class="nav-number">1.0.1.3.5.</span> <span class="nav-text">布局测试</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同步API"><span class="nav-number">1.0.2.</span> <span class="nav-text">同步API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#GREYCondition"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">GREYCondition</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同步性"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">同步性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网络"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">网络</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交互超时"><span class="nav-number">1.0.2.4.</span> <span class="nav-text">交互超时</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非主线程调用"><span class="nav-number">1.0.2.5.</span> <span class="nav-text">非主线程调用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他API"><span class="nav-number">1.0.3.</span> <span class="nav-text">其他API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#全局配置"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">全局配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#控制设备的朝向"><span class="nav-number">1.0.3.2.</span> <span class="nav-text">控制设备的朝向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#摇一摇操作"><span class="nav-number">1.0.3.3.</span> <span class="nav-text">摇一摇操作</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">李奕霖</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.6"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.6"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.6"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.6"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.6"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.6"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.6"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'bleGaFpvQ5c4f5WJlAbDrGNN-gzGzoHsz',
+        appKey: 'XnKezQClbWxVr126JTByB1ol',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
