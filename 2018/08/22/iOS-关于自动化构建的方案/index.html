@@ -109,12 +109,12 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://t1.aixinxi.net/o_1cleb1sqf1d7t1eri1d4f131f5gga.png-w.jpg">
 <meta property="og:image" content="https://t1.aixinxi.net/o_1cleb5bsrdrd14ab1sb31k9r1pr6a.png-w.jpg">
-<meta property="og:image" content="https://t1.aixinxi.net/o_1cleb5bsrdrd14ab1sb31k9r1pr6a.png-w.jpg">
-<meta property="og:image" content="https://t1.aixinxi.net/o_1cleb5bsrdrd14ab1sb31k9r1pr6a.png-w.jpg">
+<meta property="og:image" content="https://t1.aixinxi.net/o_1clebhuu71a6k17ev1mtjgu31ui2a.png-w.jpg">
+<meta property="og:image" content="https://t1.aixinxi.net/o_1clebprtmh661im21j4c27tiqfa.png-w.jpg">
 <meta property="og:image" content="https://t1.aixinxi.net/o_1clebtardarglpeusa1f8kfgla.png-w.jpg">
 <meta property="og:image" content="https://t1.aixinxi.net/o_1clect1qv1f8h1r3m11cj19rhpa0a.png-w.jpg">
 <meta property="og:image" content="https://t1.aixinxi.net/o_1cled6ssp1uoc125t7msdohbt8a.png-w.jpg">
-<meta property="og:updated_time" content="2018-08-21T16:48:00.577Z">
+<meta property="og:updated_time" content="2018-08-21T16:58:05.776Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS-关于自动化构建的方案">
 <meta name="twitter:description" content="实施目的：优化开发-测试-发布流程当前情况：iOS端开发后手动Build给QA，期间QA提出bug，开发修复后再次进行手动Biuld， 且发布后，无法保证发布版本与测试版本的同步性。故提出此方案，旨在优化流程。 第一阶段优化期望：iOS自动Build至蒲公英内测平台，同时生成生产环境IPA至TestFlight，二者构建版本号相同。经QA同学在蒲公英平台下载验证测试环境通过后，通过TestFlig">
@@ -443,7 +443,7 @@
 <li>为发挥jenkins的最大效能，云端功能和本地的一些参数需要时间配置并进行测试。</li>
 </ol>
 <h3 id="第一阶段相关技术细节"><a href="#第一阶段相关技术细节" class="headerlink" title="第一阶段相关技术细节"></a>第一阶段相关技术细节</h3><h4 id="xcode方面"><a href="#xcode方面" class="headerlink" title="xcode方面"></a>xcode方面</h4><p>在编译器中，首先通过Preprocessing + Configuration加入新的环境及配置项，将API、包名（易港金融、易港金融Beta）区分开。<img src="https://t1.aixinxi.net/o_1cleb1sqf1d7t1eri1d4f131f5gga.png-w.jpg" alt=""> <img src="https://t1.aixinxi.net/o_1cleb5bsrdrd14ab1sb31k9r1pr6a.png-w.jpg" alt=""></p>
-<h4 id="fastlane方面"><a href="#fastlane方面" class="headerlink" title="fastlane方面"></a>fastlane方面</h4><p>为了节省阅读者时间，关于fastlane的安装和配置文中不在赘述。<img src="https://t1.aixinxi.net/o_1cleb5bsrdrd14ab1sb31k9r1pr6a.png-w.jpg" alt=""> 当在控制台执行测试工作流时，会自动生成一个生产环境的IPA提交至App Store。 Connect。<img src="https://t1.aixinxi.net/o_1cleb5bsrdrd14ab1sb31k9r1pr6a.png-w.jpg" alt=""> <img src="https://t1.aixinxi.net/o_1clebtardarglpeusa1f8kfgla.png-w.jpg" alt=""></p>
+<h4 id="fastlane方面"><a href="#fastlane方面" class="headerlink" title="fastlane方面"></a>fastlane方面</h4><p>为了节省阅读者时间，关于fastlane的安装和配置文中不在赘述。<img src="https://t1.aixinxi.net/o_1clebhuu71a6k17ev1mtjgu31ui2a.png-w.jpg" alt=""> 当在控制台执行测试工作流时，会自动生成一个生产环境的IPA提交至App Store。 Connect。<img src="https://t1.aixinxi.net/o_1clebprtmh661im21j4c27tiqfa.png-w.jpg" alt=""> <img src="https://t1.aixinxi.net/o_1clebtardarglpeusa1f8kfgla.png-w.jpg" alt=""></p>
 <p>注：截止本稿发出，第一阶段已准备完毕。</p>
 <h3 id="第二阶段相关技术细节"><a href="#第二阶段相关技术细节" class="headerlink" title="第二阶段相关技术细节"></a>第二阶段相关技术细节</h3><p>为了节省读者时间，关于jenkins的安装和配置文中不在赘述。</p>
 <ol>
