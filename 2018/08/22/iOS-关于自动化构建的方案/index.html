@@ -99,20 +99,33 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Crowdfunding time">
-<meta property="og:url" content="http://yoursite.com/archives/2018/03/index.html">
+  <meta name="description" content="实施目的：优化开发-测试-发布流程当前情况：iOS端开发后手动Build给QA，期间QA提出bug，开发修复后再次进行手动Biuld， 且发布后，无法保证发布版本与测试版本的同步性。故提出此方案，旨在优化流程。 第一阶段优化期望：iOS自动Build至蒲公英内测平台，同时生成生产环境IPA至TestFlight，二者构建版本号相同。经QA同学在蒲公英平台下载验证测试环境通过后，通过TestFlig">
+<meta name="keywords" content="iOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS-关于自动化构建的方案">
+<meta property="og:url" content="http://yoursite.com/2018/08/22/iOS-关于自动化构建的方案/index.html">
 <meta property="og:site_name" content="Crowdfunding time">
+<meta property="og:description" content="实施目的：优化开发-测试-发布流程当前情况：iOS端开发后手动Build给QA，期间QA提出bug，开发修复后再次进行手动Biuld， 且发布后，无法保证发布版本与测试版本的同步性。故提出此方案，旨在优化流程。 第一阶段优化期望：iOS自动Build至蒲公英内测平台，同时生成生产环境IPA至TestFlight，二者构建版本号相同。经QA同学在蒲公英平台下载验证测试环境通过后，通过TestFlig">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://t1.aixinxi.net/o_1cleb1sqf1d7t1eri1d4f131f5gga.png-w.jpg">
+<meta property="og:image" content="https://t1.aixinxi.net/o_1cleb5bsrdrd14ab1sb31k9r1pr6a.png-w.jpg">
+<meta property="og:image" content="https://t1.aixinxi.net/o_1cleb5bsrdrd14ab1sb31k9r1pr6a.png-w.jpg">
+<meta property="og:image" content="https://t1.aixinxi.net/o_1cleb5bsrdrd14ab1sb31k9r1pr6a.png-w.jpg">
+<meta property="og:image" content="https://t1.aixinxi.net/o_1clebtardarglpeusa1f8kfgla.png-w.jpg">
+<meta property="og:image" content="https://t1.aixinxi.net/o_1clect1qv1f8h1r3m11cj19rhpa0a.png-w.jpg">
+<meta property="og:image" content="https://t1.aixinxi.net/o_1cled6ssp1uoc125t7msdohbt8a.png-w.jpg">
+<meta property="og:updated_time" content="2018-08-21T16:48:00.577Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Crowdfunding time">
+<meta name="twitter:title" content="iOS-关于自动化构建的方案">
+<meta name="twitter:description" content="实施目的：优化开发-测试-发布流程当前情况：iOS端开发后手动Build给QA，期间QA提出bug，开发修复后再次进行手动Biuld， 且发布后，无法保证发布版本与测试版本的同步性。故提出此方案，旨在优化流程。 第一阶段优化期望：iOS自动Build至蒲公英内测平台，同时生成生产环境IPA至TestFlight，二者构建版本号相同。经QA同学在蒲公英平台下载验证测试环境通过后，通过TestFlig">
+<meta name="twitter:image" content="https://t1.aixinxi.net/o_1cleb1sqf1d7t1eri1d4f131f5gga.png-w.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/03/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/22/iOS-关于自动化构建的方案/"/>
 
 
 
@@ -122,7 +135,7 @@
   };
 </script>
 
-  <title>归档 | Crowdfunding time</title>
+  <title>iOS-关于自动化构建的方案 | Crowdfunding time</title>
   
 
 
@@ -169,7 +182,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -291,137 +304,244 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 8 篇日志。 继续努力。
-      </span>
-      
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/22/iOS-关于自动化构建的方案/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李奕霖">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Crowdfunding time">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/03/26/“关于互联网金融合规备案相关政策的时间线（不定期更新）”/" itemprop="url">
-              
-                <span itemprop="name">“关于互联网金融合规备案相关政策的时间线（不定期更新）”</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">iOS-关于自动化构建的方案</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-26T00:02:23+08:00"
-              content="2018-03-26" >
-          03-26
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-22T00:45:29+08:00">2018-08-22</time>
+            
 
-    </header>
-  </article>
+            
+            
 
+            
+          </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/iOS开发/" itemprop="url" rel="index"><span itemprop="name">iOS开发</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/22/iOS-关于自动化构建的方案/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/08/22/iOS-关于自动化构建的方案/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/19/记一次App-Store开发者名称的修改/" itemprop="url">
-              
-                <span itemprop="name">记一次App Store开发者名称的修改</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-19T15:20:04+08:00"
-              content="2018-03-19" >
-          03-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <h3 id="实施目的：优化开发-测试-发布流程"><a href="#实施目的：优化开发-测试-发布流程" class="headerlink" title="实施目的：优化开发-测试-发布流程"></a>实施目的：优化开发-测试-发布流程</h3><p>当前情况：iOS端开发后手动Build给QA，期间QA提出bug，开发修复后再次进行手动Biuld， 且发布后，无法保证发布版本与测试版本的同步性。故提出此方案，旨在优化流程。</p>
+<p>第一阶段优化期望：iOS自动Build至蒲公英内测平台，同时生成生产环境IPA至TestFlight，二者构建版本号相同。经QA同学在蒲公英平台下载验证测试环境通过后，通过TestFlight App验证正式环境，通过后直接由运营同学上线。</p>
+<p>第二阶段优化期望：测试IPA，正式IPA统一由云端管理。验证后，由fastlane发布至App Store Connect。</p>
+<a id="more"></a>
+<h4 id="为什么是两个阶段？"><a href="#为什么是两个阶段？" class="headerlink" title="为什么是两个阶段？"></a>为什么是两个阶段？</h4><ol>
+<li>目前开发，QA人员、精（zhi）力（you）均（wo）有（zi）限（ji）。</li>
+<li>蒲公英平台为付费专业版，理论上没有流量限制，功能丰富（密码提取、微信通知、浏览器下载安装不需要使用ITunes同步），运营同学可以在App Store Connect直接提取QA验证过的IPA进行操作，既节省了额外学习Application loader时间，也避免了微信、钉钉等传输工具所带来的风险。（转发出错，IPA被破解、注入）</li>
+</ol>
+<h3 id="选型思路"><a href="#选型思路" class="headerlink" title="选型思路"></a>选型思路</h3><p>在调研了一些自动化工具后，选择了fastlane + jenkins， 二者均可以单独使用，也可以搭配使用。</p>
+<p>fastlane优点在于轻量化且配置容易，上手快，它提供了许多好用的工具，还有直观的脚本，让你可以不用碰触到很多系統的细节面，也能够做到各种客制流程，而且它同時支援 iOS/ MacOS 和 Android 平台。大多数的设定你都可以透过commandline 直接跟 xcode 互动做到。</p>
+<p>jenkins是一個有网页 UI 的自动化工具，让你可以利用 GUI 设定工作內容，像是设定 project 参数等，也可以做到执行排程，像是每日定時任务等。功能强大，支持git，以及历史版本的保存（协同云端）。QA可以自由在分支间，版本间进行切换。</p>
+<h3 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h3><p>使用fastlane作为过渡工具，建立起新的标准流程，待后期条件成熟，将jenkins加入。二者的组合可以最大限度发挥fastlane的构建速度与jenkins版本控制的优点。</p>
+<h4 id="为什么不直接是jenkins？"><a href="#为什么不直接是jenkins？" class="headerlink" title="为什么不直接是jenkins？"></a>为什么不直接是jenkins？</h4><ol>
+<li>在日常的使用中，jenkins凭借其插件的庞大数量和丰富的功能让人心旷神怡，但也正因如此，在和xcode的配合中，由于每个插件的维护和更新时间无法控制，因此会造成版本过渡期的失效。问题出现场景：适配xcode 10 SDK，更新后插件扔停留在xcode 9，此时自动化功能受损。<strong>抛开插件，jenkins不具备直接上传的能力，这就意味着不论是正式IPA、测试IPA，都将直接暴露于各个非专业传输工具中，相关工作人员的桌面、废纸篓中。风险不言而喻。</strong></li>
+<li>为发挥jenkins的最大效能，云端功能和本地的一些参数需要时间配置并进行测试。</li>
+</ol>
+<h3 id="第一阶段相关技术细节"><a href="#第一阶段相关技术细节" class="headerlink" title="第一阶段相关技术细节"></a>第一阶段相关技术细节</h3><h4 id="xcode方面"><a href="#xcode方面" class="headerlink" title="xcode方面"></a>xcode方面</h4><p>在编译器中，首先通过Preprocessing + Configuration加入新的环境及配置项，将API、包名（易港金融、易港金融Beta）区分开。<img src="https://t1.aixinxi.net/o_1cleb1sqf1d7t1eri1d4f131f5gga.png-w.jpg" alt=""> <img src="https://t1.aixinxi.net/o_1cleb5bsrdrd14ab1sb31k9r1pr6a.png-w.jpg" alt=""></p>
+<h4 id="fastlane方面"><a href="#fastlane方面" class="headerlink" title="fastlane方面"></a>fastlane方面</h4><p>为了节省阅读者时间，关于fastlane的安装和配置文中不在赘述。<img src="https://t1.aixinxi.net/o_1cleb5bsrdrd14ab1sb31k9r1pr6a.png-w.jpg" alt=""> 当在控制台执行测试工作流时，会自动生成一个生产环境的IPA提交至App Store。 Connect。<img src="https://t1.aixinxi.net/o_1cleb5bsrdrd14ab1sb31k9r1pr6a.png-w.jpg" alt=""> <img src="https://t1.aixinxi.net/o_1clebtardarglpeusa1f8kfgla.png-w.jpg" alt=""></p>
+<p>注：截止本稿发出，第一阶段已准备完毕。</p>
+<h3 id="第二阶段相关技术细节"><a href="#第二阶段相关技术细节" class="headerlink" title="第二阶段相关技术细节"></a>第二阶段相关技术细节</h3><p>为了节省读者时间，关于jenkins的安装和配置文中不在赘述。</p>
+<ol>
+<li>构建触发器，这里我们选择<strong>Poll SCM</strong>，然后在下方输入框填入日程描述<code>H/10 * * * *</code>，表示每10分钟从仓库拉取一次，如果有新的提交，那么构建项目。<img src="https://t1.aixinxi.net/o_1clect1qv1f8h1r3m11cj19rhpa0a.png-w.jpg" alt=""></li>
+<li>写入shell文件，此处填入在之前控制台执行的fastlane命令。<img src="https://t1.aixinxi.net/o_1cled6ssp1uoc125t7msdohbt8a.png-w.jpg" alt=""> </li>
+</ol>
+<p>更深层次的功能会在使用测试后逐渐完善。</p>
+
+      
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+<div>    
+ 
+ 
+    <ul class="post-copyright">
+      <li class="post-copyright-author">
+          <strong>本文作者：</strong>李奕霖
+      </li>
+      <li class="post-copyright-link">
+        <strong>本文链接：</strong>
+        <a href="/2018/08/22/iOS-关于自动化构建的方案/" title="iOS-关于自动化构建的方案">2018/08/22/iOS-关于自动化构建的方案/</a>
+      </li>
+      <li class="post-copyright-license">
+        <strong>版权声明：</strong>
+        本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+      </li>
+    </ul>
+  
+</div>
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"><i class="fa fa-tag"></i> iOS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/22/EarlGrey-API的翻译/" rel="next" title="EarlGrey-API的翻译">
+                <i class="fa fa-chevron-left"></i> EarlGrey-API的翻译
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -442,8 +562,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -526,6 +655,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#实施目的：优化开发-测试-发布流程"><span class="nav-number">1.</span> <span class="nav-text">实施目的：优化开发-测试-发布流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么是两个阶段？"><span class="nav-number">1.1.</span> <span class="nav-text">为什么是两个阶段？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选型思路"><span class="nav-number">2.</span> <span class="nav-text">选型思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决思路"><span class="nav-number">3.</span> <span class="nav-text">解决思路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么不直接是jenkins？"><span class="nav-number">3.1.</span> <span class="nav-text">为什么不直接是jenkins？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一阶段相关技术细节"><span class="nav-number">4.</span> <span class="nav-text">第一阶段相关技术细节</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#xcode方面"><span class="nav-number">4.1.</span> <span class="nav-text">xcode方面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fastlane方面"><span class="nav-number">4.2.</span> <span class="nav-text">fastlane方面</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二阶段相关技术细节"><span class="nav-number">5.</span> <span class="nav-text">第二阶段相关技术细节</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -667,6 +812,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.6"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.6"></script>
+
+
 
   
 
